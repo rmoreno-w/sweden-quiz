@@ -6,9 +6,11 @@ import { useRouter } from 'next/router';
 import db from '../db.json';
 import Widget from '../src/components/Widget';
 import QuizLogo from '../src/components/QuizLogo';
-import QuizBackground from '../src/components/QuizBackGround';
+import QuizBackground from '../src/components/QuizBackground';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
+import Input from '../src/components/Input';
+import Button from '../src/components/Button';
 
 // const BackgroundImage = styled.div`
 //   background-image: url(${ db.bg});
@@ -46,7 +48,7 @@ export default function Home() {
 
           <Widget.Content>
             {/* <p>{ db.description }</p> */}
-            <form onSubmit={function handleSubmit(infoDoEvento) {
+            <form onSubmit={(infoDoEvento) => {
               infoDoEvento.preventDefault(); // Necessario p/ evitar padrao do browser de recarregar a pagina
               router.push(`quiz?name=${name}`);
 
@@ -54,15 +56,17 @@ export default function Home() {
             }}
             >
 
-              <input
+              <Input
+                name="nomeDoUsuario"
                 placeholder="Digite seu nome"
-                onChange={function handleInput(infosDaMudanca) {
+                onChange={ (infosDaMudanca) => {
                   console.log('Mudou o input para', infosDaMudanca.target.value);
                   setName(infosDaMudanca.target.value);
                 }}
+                value={name}
               />
 
-              <button type="submit" disabled={!name.length}>Jogar!</button>
+              <Button type="submit" disabled={!name.length}>Jogar!</Button>
             </form>
           </Widget.Content>
         </Widget>
