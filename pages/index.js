@@ -1,10 +1,14 @@
-import styled from 'styled-components'
-import db from '../db.json'
-import Widget from '../src/components/Widget'
-import QuizLogo from '../src/components/QuizLogo'
-import QuizBackground from '../src/components/QuizBackGround'
-import Footer from '../src/components/Footer'
-import GitHubCorner from '../src/components/GitHubCorner'
+import styled from 'styled-components';
+import Head from 'next/head';
+import React from 'react';
+import { useRouter } from 'next/router';
+
+import db from '../db.json';
+import Widget from '../src/components/Widget';
+import QuizLogo from '../src/components/QuizLogo';
+import QuizBackground from '../src/components/QuizBackGround';
+import Footer from '../src/components/Footer';
+import GitHubCorner from '../src/components/GitHubCorner';
 
 // const BackgroundImage = styled.div`
 //   background-image: url(${ db.bg});
@@ -13,7 +17,7 @@ import GitHubCorner from '../src/components/GitHubCorner'
 //   background-position: center;
 // `;
 
-const QuizContainer = styled.div `
+const QuizContainer = styled.div`
   width: 100%;  
   max-width: 350px;
   padding-top: 45px;
@@ -24,34 +28,57 @@ const QuizContainer = styled.div `
   }
 `;
 
-
 export default function Home() {
+  const router = useRouter();
+  const [name, setName] = React.useState('');
+
   return (
-    <QuizBackground backgroundImage={ db.bg }>
-        <QuizContainer>
-          <QuizLogo/>
-          <Widget>
-            <Widget.Header>
-              <h1>{ db.title }</h1>
-            </Widget.Header>            
+    <QuizBackground backgroundImage={db.bg}>
+      <Head>
+        <title>Sweden Quiz @Imersao Next - Alura</title>
+      </Head>
+      <QuizContainer>
+        <QuizLogo />
+        <Widget>
+          <Widget.Header>
+            <h1>{ db.title }</h1>
+          </Widget.Header>
 
-            <Widget.Content>
-              <p>{ db.description }</p>
-            </Widget.Content>
-          </Widget>
+          <Widget.Content>
+            {/* <p>{ db.description }</p> */}
+            <form onSubmit={function handleSubmit(infoDoEvento) {
+              infoDoEvento.preventDefault(); // Necessario p/ evitar padrao do browser de recarregar a pagina
+              router.push(`quiz?name=${name}`);
 
-          <Widget>
-            <Widget.Content>
-              <h1>Quizes dos Alunos</h1>
+              console.log('Submissao react');
+            }}
+            >
 
-              <p>lorem ipsum</p>
-            </Widget.Content>
-          </Widget>
-          
-          <Footer/>
-        </QuizContainer>
+              <input
+                placeholder="Digite seu nome"
+                onChange={function handleInput(infosDaMudanca) {
+                  console.log('Mudou o input para', infosDaMudanca.target.value);
+                  setName(infosDaMudanca.target.value);
+                }}
+              />
 
-        <GitHubCorner projectUrl="https://github.com/rmoreno-w/rmoreno-w"></GitHubCorner>
+              <button type="submit" disabled={!name.length}>Jogar!</button>
+            </form>
+          </Widget.Content>
+        </Widget>
+
+        <Widget>
+          <Widget.Content>
+            <h1>Quizes dos Alunos</h1>
+
+            <p>lorem ipsum</p>
+          </Widget.Content>
+        </Widget>
+
+        <Footer />
+      </QuizContainer>
+
+      <GitHubCorner projectUrl="https://github.com/rmoreno-w/rmoreno-w" />
     </QuizBackground>
   );
 }
