@@ -27,7 +27,9 @@
     }
   ],
   "external": [
-    ""
+    "https://meta-quiz-imersao-react.markkop.vercel.app/",
+    "https://bitter-brewing-quiz.afuscella.vercel.app/",
+    "https://aluraquiz-git-main.itsjessmenezes.vercel.app/"
   ],
   "theme": {
     "colors": {

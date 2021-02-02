@@ -11,6 +11,9 @@ import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
 import Input from '../src/components/Input';
 import Button from '../src/components/Button';
+import Link from '../src/components/Link';
+
+import { motion } from 'framer-motion';
 
 // const BackgroundImage = styled.div`
 //   background-image: url(${ db.bg});
@@ -39,7 +42,17 @@ export default function Home() {
       <Head>
         <title>Sweden Quiz @Imersao Next - Alura</title>
       </Head>
-      <QuizContainer>
+      <QuizContainer as={motion.section}
+          transition={{
+            duration: 0.9,
+            delay: 0.20
+          }}
+          variants={{
+          show: {opacity: 1, y: '0'},
+          hidden: {opacity: 0, y: '100%'}, 
+          }}
+          initial="hidden"
+          animate="show">
         <QuizLogo />
         <Widget>
           <Widget.Header>
@@ -74,8 +87,15 @@ export default function Home() {
         <Widget>
           <Widget.Content>
             <h1>Quizes dos Alunos</h1>
-
-            <p>lorem ipsum</p>
+            
+            <ul>
+              {db.external.map((linkExterno) => {
+                // console.log('linkk:', linkExterno);
+                const [projectName, userName] = linkExterno.replace(/\//g, '').replace('https:','').replace('.vercel.app','').split('.');
+                return (<li key={`listkey__${linkExterno}`}><Widget.Topic as={Link} href={`/quiz/${projectName}___${userName}`}>{`Projeto do usuário: ${userName}: - ${projectName}`}</Widget.Topic></li>)
+              })}
+            </ul>
+            
           </Widget.Content>
         </Widget>
 

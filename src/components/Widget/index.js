@@ -55,6 +55,7 @@ Widget.Content = styled.div`
 `;
 
 Widget.Topic = styled.a`
+  text-shadow: 0px 0px 10px black,0px 0px 10px black, 0px 0px 10px black; 
   outline: 0;
   text-decoration: none;
   color: ${({ theme }) => theme.colors.contrastText};
