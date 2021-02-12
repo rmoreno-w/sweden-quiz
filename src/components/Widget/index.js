@@ -52,10 +52,18 @@ Widget.Content = styled.div`
     list-style: none; 
     padding: 0;
   }
+
+  li {
+    margin-bottom: 5px;
+  }
+
+  p {
+    margin-bottom: 10px;
+  }
 `;
 
 Widget.Topic = styled.a`
-  text-shadow: 0px 0px 10px black,0px 0px 10px black, 0px 0px 10px black; 
+  /* text-shadow: 0px 0px 10px black,0px 0px 10px black, 0px 0px 10px F5FBFF;  */
   outline: 0;
   text-decoration: none;
   color: ${({ theme }) => theme.colors.contrastText};

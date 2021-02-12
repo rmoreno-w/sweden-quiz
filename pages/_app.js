@@ -32,7 +32,6 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const { theme } = db;
-// NOVO RED = #DB324D
 
 export default function App({ Component, pageProps }) {
   return (

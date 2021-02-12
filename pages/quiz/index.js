@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import Head from 'next/head';
 import db from '../../db.json';
 import Widget from '../../src/components/Widget';
 import Footer from '../../src/components/Footer';
@@ -15,12 +16,12 @@ function ResultWidget({ results }) {
   return (
     <Widget>
       <Widget.Header>
-        Resultados:
+        Your score:
       </Widget.Header>
 
       <Widget.Content>
         <p>
-          Você acertou
+          You got
           {' '}
           {/* {results.reduce((somatoriaAtual, resultAtual) => {
             const isAcerto = resultAtual === true;
@@ -31,7 +32,7 @@ function ResultWidget({ results }) {
           }, 0)} */}
           {results.filter((x) => x).length}
           {' '}
-          perguntas
+          questions right
         </p>
         <ul>
           {results.map((result, index) => (
@@ -39,10 +40,10 @@ function ResultWidget({ results }) {
               #
               {index + 1}
               {' '}
-              Resultado:
+              Result:
               {result === true
-                ? ' Acertou'
-                : ' Errou'}
+                ? ' Right'
+                : ' Wrong'}
             </li>
           ))}
         </ul>
@@ -77,13 +78,13 @@ function QuestionWidget ({ question, questionIndex, totalQuestions, onSubmit, ad
     <Widget>
       <Widget.Header>
         {/* <BackLinkArrow href="/" /> */}
-        <h3> {`Pergunta ${questionIndex + 1} de ${totalQuestions}`}</h3>
+        <h3> {`Question ${questionIndex + 1} of ${totalQuestions}`}</h3>
       </Widget.Header>
 
-      <img alt="Imagem da Pergunta"
+      <img alt="Question Image"
       style={{
         width: '100%',
-        height: '150px',
+        height: '250px',
         objectFit: 'cover',
       }}
       src={question.image}
@@ -126,9 +127,9 @@ function QuestionWidget ({ question, questionIndex, totalQuestions, onSubmit, ad
           {JSON.stringify(question, null, 4)}
         </pre> */}
         {/* <p>{`alternative: ${selectedAlternative}`}</p> */}
-        {isQuestionSubmitted && isCorrect && <p>Voce acertou!</p>}
-        {isQuestionSubmitted && !isCorrect && <p>Voce errou!</p>}
-        <Button type="submit" disabled={!hasAlternativeSelected}>Confirmar</Button>
+        {isQuestionSubmitted && isCorrect && <p>That's right!</p>}
+        {isQuestionSubmitted && !isCorrect && <p>Oh oh, that's wrong</p>}
+        <Button type="submit" disabled={!hasAlternativeSelected}>Confirm</Button>
         </AlternativesForm>
       </Widget.Content>
     </Widget>
@@ -181,6 +182,9 @@ export default function QuizPage() {
 
   return (
     <QuizBackground backgroundImage={db.bg}>
+      <Head>
+        <title>Sweden Quiz @Imersao Next - Alura</title>
+      </Head>
       <QuizContainer>
         <QuizLogo />
         

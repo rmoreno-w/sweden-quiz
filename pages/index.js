@@ -71,7 +71,7 @@ export default function Home() {
 
               <Input
                 name="nomeDoUsuario"
-                placeholder="Digite seu nome"
+                placeholder="Enter your name"
                 onChange={ (infosDaMudanca) => {
                   console.log('Mudou o input para', infosDaMudanca.target.value);
                   setName(infosDaMudanca.target.value);
@@ -79,20 +79,20 @@ export default function Home() {
                 value={name}
               />
 
-              <Button type="submit" disabled={!name.length}>Jogar!</Button>
+              <Button type="submit" disabled={!name.length}>Play!</Button>
             </form>
           </Widget.Content>
         </Widget>
 
         <Widget>
           <Widget.Content>
-            <h1>Quizes dos Alunos</h1>
+            <h1>Other Alura student's Quizs</h1>
             
             <ul>
               {db.external.map((linkExterno) => {
                 // console.log('linkk:', linkExterno);
                 const [projectName, userName] = linkExterno.replace(/\//g, '').replace('https:','').replace('.vercel.app','').split('.');
-                return (<li key={`listkey__${linkExterno}`}><Widget.Topic as={Link} href={`/quiz/${projectName}___${userName}`}>{`Projeto do usuário: ${userName}: - ${projectName}`}</Widget.Topic></li>)
+                return (<li key={`listkey__${linkExterno}`}><Widget.Topic as={Link} href={`/quiz/${projectName}___${userName}`}>{`GitHub User: ${userName} - Project: ${projectName}`}</Widget.Topic></li>)
               })}
             </ul>
             
@@ -102,7 +102,7 @@ export default function Home() {
         <Footer />
       </QuizContainer>
 
-      <GitHubCorner projectUrl="https://github.com/rmoreno-w/rmoreno-w" />
+      <GitHubCorner projectUrl="https://github.com/rmoreno-w/sweden-quiz" />
     </QuizBackground>
   );
 }

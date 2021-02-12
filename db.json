@@ -4,25 +4,183 @@
   "description": "Lets test your knowledge about this wonderful country!",
   "questions": [
     {
-      "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-      "title": "Como fazer um seletor por id via CSS?",
-      "description": "Essa é pra aquecer",
+      "image": "https://cdn.culturagenial.com/imagens/sotsilogiya-cke.jpg",
+      "title": "Approximately how many inhabitants does Sweden have?",
+      "description": "Neither so many, nor so few",
       "answer": 2,
       "alternatives": [
-        ".elemento",
-        "*elemento",
-        "#elemento",
-        "%elemento"
+        "135,000",
+        "4,600,00",
+        "10,000,000",
+        "50,000,000"
       ]
     },
     {
-      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-      "title": "Como fazer um background gradiente com css?",
-      "description": "Faz tempo em haha",
+      "image": "https://beyondthestates.com/wp-content/uploads/2016/06/nordic-countries-flag-pins-map-paper-denmark-finland-norway-sweden-northern-europe-74457995.jpg",
+      "title": "Which countries border Sweden?",
+      "description": "Some of these countries are close and may trick you",
+      "answer": 3,
+      "alternatives": [
+        "Germany and Russia",
+        "Denmark and Germany",
+        "Norway and Denmark",
+        "Finland and Norway"
+      ]
+    },
+    {
+      "image": "https://miro.medium.com/max/768/1*nLFiuyCK685BJ68R482WrA.jpeg",
+      "title": "There is kind of a societal code of conduct/lifestyle in Sweden which really has no direct translation and it is represented by a single word. This word means ‘just enough’, ‘in moderation’, ‘appropriate’ and other synonyms you can pull out of the dictionary.\n\nWhich word would this be?",
+      "description": "We're starting to heat up the engine",
+      "answer": 1,
+      "alternatives": [
+         "Fika",
+         "Lagom",
+         "Klocka",
+         "Dålig"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/3o6ZtiT89Gh4MOsvUQ/giphy.gif",
+      "title": "Talking about Swedish common facts, there is a common habit among Swedes when they arrive at home. What would it be?",
+      "description": "We're starting to heat up the engine",
       "answer": 0,
       "alternatives": [
-         "background: linear-gradient(#e66465, #9198e5);",
-         "background: gradient(#e66465, #9198e5);"
+         "Taking off their shoes",
+         "Clapping twice",
+         "Checking what time it is",
+         "Drinking a cup of coffee"
+      ]
+    },
+    {
+      "image": "https://mk0mercatornet3umiw5.kinstacdn.com/wp-content/uploads/2018/02/sweden_family-friendly-1200x675.jpg",
+      "title": "How many days of parental leave are Swedes allowed to have",
+      "description": "Tip: they get more than the average and can be split between the parents",
+      "answer": 3,
+      "alternatives": [
+         "90",
+         "120",
+         "250",
+         "480"
+      ]
+    },
+    {
+      "image": "https://www.luleatravel.com/wp-content/uploads/2020/06/arctic-sweden-christmas.jpg",
+      "title": "In Sweden, there is another name for the Chrismtas Holiday. How do they call this Holiday?",
+      "description": "If you never heard it, this will pretty hard to guess",
+      "answer": 2,
+      "alternatives": [
+         "Bul",
+         "Gul",
+         "Jul",
+         "Wristmas"
+      ]
+    },
+    {
+      "image": "https://toppingpong.com/wp-content/uploads/2020/04/waldner-service.jpg",
+      "title": "There is a Swedish table tennis player that is pretty famous around the World and widely regarded as one of the greatest table tennis players of all time. Some even call him  \"The Mozart of table tennis\".\n\nWho is this legendary player?",
+      "description": "Some table tennis players tend to get mad at you if you call it ping-pong",
+      "answer": 1,
+      "alternatives": [
+         "Zlatan Ibrahimović",
+         "Jan Ove Waldner",
+         "Björn Ironside",
+         "Erik Karlsson"
+      ]
+    },
+    {
+      "image": "https://www.svtstatic.se/image-cms/svtse/1562319760/sport/article22892730.svt/alternates/large/asllani-jpg",
+      "title": "For many years, Sweden has had one of the best teams in the world when it comes to women’s football. There is a distinct player in this Swedish women's Team nicknamed \"Kosse\" who is quite well recognized and has helped put Swedish women’s football on the map. Who is she?",
+      "description": "Football is refered to as the unofficial national sport of Sweden",
+      "answer": 0,
+      "alternatives": [
+        "Kosovare Aslani",
+        "Elin Nordegren",
+        "Filippa Curmark",
+        "Gunilla Paijkull"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/ZZlfHXTClWoPfhyuc8/giphy.gif",
+      "title": "A Swedish environmental activist who is internationally known for challenging world leaders to take immediate action against climate change, this Swedish girl have been trying to make a positive impact in the world. Who is this brave young woman?",
+      "description": "Despite being 18, she has been making herself noticed",
+      "answer": 2,
+      "alternatives": [
+         "Zara Larsson",
+         "Therese Lindgren",
+         "Greta Thunberg",
+         "Eija Skarsgård"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/lz8pRTu1aE0TVhycyL/giphy.gif",
+      "title": "This Swedish pop group was formed in Stockholm in 1972 by Agnetha Fältskog, Björn Ulvaeus, Benny Andersson, and Anni-Frid Lyngstad. They became one of the most commercially successful acts in the history of popular music, topping the charts worldwide from 1974 to 1983. Who are they?",
+      "description": "Tip: You are the dancing queeeeeen....... And look at their first names!!",
+      "answer": 1,
+      "alternatives": [
+         "Avicii",
+         "ABBA",
+         "Zara Larsson's Pop Band",
+         "Europe"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/xT8qBaYW7uURLKkexG/giphy.gif",
+      "title": "With 10.8 million monthly listeers on Spotify, you could say that things are going pretty well for this Swedish pop sensation. She was discovered at 24 by Swedish songwriter Max Martin and wrote hit singles like Ellie Goulding’s ‘Love me like you do’. Two years later her own artist career was a fact with the release of international hit ‘Habits (Stay High)’. Who is this remarkable artist?",
+      "description": "Tip: Oh oh..... Oh oh.....",
+      "answer": 0,
+      "alternatives": [
+         "Tove Lo",
+         "Molly Sandén",
+         "Amanda Aasa",
+         "Miss Li"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/IhmV9QC8P4A5jRaEgN/giphy.gif  ",
+      "title": "This Swedish expression represents a tradition in this wonderful country. Friends, family or colleagues meet for coffee or tea, often with something sweet on the side. Commonly translated as \"a coffee and cake break\", it really means more than that to the Swedish culture. Which expression is this?",
+      "description": "Skulle du ta en av dessa med mig?",
+      "answer": 3,
+      "alternatives": [
+         "Hygge",
+         "Lagom",
+         "Frukost",
+         "Fika"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/udEp7yYBCIgyA/giphy.gif",
+      "title": "Speaking of Swedish \"coffee break\", there is a sweet roll that is often served in this coffee break and is widely appreciated in Sweden. It even has its own National day in the country. What bun is this? ",
+      "description": "Maybe cinnamon is an ingredient",
+      "answer": 1,
+      "alternatives": [
+         "Smörgåstårta",
+         "Kanelbulle",
+         "Lussebulle",
+         "Semla"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/Rz6aDsGiUzPDq/giphy.gif",
+      "title": "This savory dish is not originally from Sweden but is widely thought of as Sweden's national dish. A version of this recipe is sold in the Swedish renown furniture company IKEA and is very appreciated. What is this national dish we're talking about?",
+      "description": "Mashed potatoes and lingonberry jam goes well with this recipe",
+      "answer": 3,
+      "alternatives": [
+         "Kalops",
+         "Fermented/Sour Herring",
+         "Pickled Herring",
+         "Swedish Meatballs"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/10zxDv7Hv5RF9C/giphy.gif",
+      "title": "This Swedish city has been considered as a hub when it comes down to Game Development and sometimes is even called \"The game capital of the Nordics\". It has more games developers and studios per capita than almost anywhere else on earth. Which city is this?",
+      "description": "It might be closer to Denmark than you think",
+      "answer": 0,
+      "alternatives": [
+         "Malmö",
+         "Göteborg",
+         "Umeå",
+         "Stockholm"
       ]
     }
   ],
@@ -38,7 +196,7 @@
       "mainBg": "#001D33",
       "contrastText": "#F5FBFF",
       "wrong": "#A62639",
-      "success": "#91F5AD"
+      "success": "#0DAB76"
     },
     "borderRadius": "4px"
   }
