@@ -16,7 +16,7 @@
       ]
     },
     {
-      "image": "https://beyondthestates.com/wp-content/uploads/2016/06/nordic-countries-flag-pins-map-paper-denmark-finland-norway-sweden-northern-europe-74457995.jpg",
+      "image": "https://external-preview.redd.it/P4noQ9-aUecKW8fMRDWV73-KybRGUHVbBfvMrhdmm9U.png?auto=webp&s=cd2d36e66d7f8eeae5fa4b9a3f01f5f65ee90b6f",
       "title": "Which countries border Sweden?",
       "description": "Some of these countries are close and may trick you",
       "answer": 3,
@@ -101,7 +101,7 @@
     },
     {
       "image": "https://media.giphy.com/media/ZZlfHXTClWoPfhyuc8/giphy.gif",
-      "title": "A Swedish environmental activist who is internationally known for challenging world leaders to take immediate action against climate change, this Swedish girl have been trying to make a positive impact in the world. Who is this brave young woman?",
+      "title": "This Swedish girl has been trying to make a positive impact in the world and is known for challenging government leaders to take action against climate change. Who is this brave young woman?",
       "description": "Despite being 18, she has been making herself noticed",
       "answer": 2,
       "alternatives": [
@@ -113,7 +113,7 @@
     },
     {
       "image": "https://media.giphy.com/media/lz8pRTu1aE0TVhycyL/giphy.gif",
-      "title": "This Swedish pop group was formed in Stockholm in 1972 by Agnetha Fältskog, Björn Ulvaeus, Benny Andersson, and Anni-Frid Lyngstad. They became one of the most commercially successful acts in the history of popular music, topping the charts worldwide from 1974 to 1983. Who are they?",
+      "title": "One of the most commercially successful acts in the history of popular music, this Swedish pop group formed in 1972 and topped the charts worldwide from 1974 to 1983. The group is composed by Agnetha Fältskog, Björn Ulvaeus, Benny Andersson, and Anni-Frid Lyngstad Who are they?",
       "description": "Tip: You are the dancing queeeeeen....... And look at their first names!!",
       "answer": 1,
       "alternatives": [
@@ -125,8 +125,8 @@
     },
     {
       "image": "https://media.giphy.com/media/xT8qBaYW7uURLKkexG/giphy.gif",
-      "title": "With 10.8 million monthly listeers on Spotify, you could say that things are going pretty well for this Swedish pop sensation. She was discovered at 24 by Swedish songwriter Max Martin and wrote hit singles like Ellie Goulding’s ‘Love me like you do’. Two years later her own artist career was a fact with the release of international hit ‘Habits (Stay High)’. Who is this remarkable artist?",
-      "description": "Tip: Oh oh..... Oh oh.....",
+      "title": "With 16.4 million monthly listeers on Spotify, things are going pretty well for this Swedish pop sensation. She gained international popularity with the hit ‘Habits (Stay High)’. Who is this remarkable artist?",
+      "description": "Oh oh..... Oh oh.....",
       "answer": 0,
       "alternatives": [
          "Tove Lo",
@@ -196,7 +196,8 @@
       "mainBg": "#001D33",
       "contrastText": "#F5FBFF",
       "wrong": "#A62639",
-      "success": "#0DAB76"
+      "success": "#0DAB76", 
+      "hover": "#01BAEF"
     },
     "borderRadius": "4px"
   }

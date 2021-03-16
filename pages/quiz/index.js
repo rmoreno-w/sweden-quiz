@@ -1,6 +1,12 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import Image from 'next/image'
+import styled from 'styled-components'
 import Head from 'next/head';
+import { MdCheckBox, MdDoNotDisturb } from "react-icons/md";
+
+import BackLinkArrow from '../../src/components/BackLinkArrow';
+
 import db from '../../db.json';
 import Widget from '../../src/components/Widget';
 import Footer from '../../src/components/Footer';
@@ -16,13 +22,15 @@ function ResultWidget({ results }) {
   return (
     <Widget>
       <Widget.Header>
+        <BackLinkArrow href="/" /> 
         Your score:
+        <QuizLogo />
       </Widget.Header>
 
       <Widget.Content>
         <p>
           You got
-          {' '}
+          <ResultWidget.Strong>{' '}
           {/* {results.reduce((somatoriaAtual, resultAtual) => {
             const isAcerto = resultAtual === true;
             if (isAcerto) {
@@ -31,19 +39,19 @@ function ResultWidget({ results }) {
             return somatoriaAtual;
           }, 0)} */}
           {results.filter((x) => x).length}
-          {' '}
-          questions right
+          {' '}</ResultWidget.Strong>
+          questions right!
         </p>
         <ul>
           {results.map((result, index) => (
-            <li key={`result__${result}`}>
+            <li key={`result__${index}`}>
               #
               {index + 1}
               {' '}
               Result:
               {result === true
-                ? ' Right'
-                : ' Wrong'}
+                ? <ResultWidget.Status status={result}> Right <MdCheckBox /></ResultWidget.Status>
+                : <ResultWidget.Status status={result}> Wrong <MdDoNotDisturb /></ResultWidget.Status>}
             </li>
           ))}
         </ul>
@@ -52,12 +60,25 @@ function ResultWidget({ results }) {
   );
 }
 
+ResultWidget.Strong = styled.strong`
+  font-weight: 500;
+  font-size: 1.2rem;
+`
+
+ResultWidget.Status = styled.span`
+  svg {
+    vertical-align: bottom;
+  }
+  
+  color: ${props => props.status ? ({ theme }) => theme.colors.success : ({ theme }) => theme.colors.wrong};
+`
 
 function LoadingWidget() {
   return (
     <Widget>
       <Widget.Header>
         Carregando...
+        <QuizLogo />
       </Widget.Header>
 
       <Widget.Content>
@@ -66,6 +87,7 @@ function LoadingWidget() {
     </Widget>
   );
 }
+
 
 function QuestionWidget ({ question, questionIndex, totalQuestions, onSubmit, addResults }) {
   const questionId = `question__${questionIndex}`;
@@ -77,18 +99,20 @@ function QuestionWidget ({ question, questionIndex, totalQuestions, onSubmit, ad
   return (
     <Widget>
       <Widget.Header>
-        {/* <BackLinkArrow href="/" /> */}
+        <BackLinkArrow href="/" />
         <h3> {`Question ${questionIndex + 1} of ${totalQuestions}`}</h3>
+        <QuizLogo />
       </Widget.Header>
 
-      <img alt="Question Image"
-      style={{
-        width: '100%',
-        height: '250px',
-        objectFit: 'cover',
-      }}
-      src={question.image}
-      />
+
+      <QuestionWidget.ImageContainer>
+        <Image alt="Question Image"
+        layout="fill"
+        objectFit="cover"
+        src={question.image}
+        />
+      </QuestionWidget.ImageContainer>
+
       <Widget.Content>
         <h2>
           { question.title }
@@ -127,14 +151,21 @@ function QuestionWidget ({ question, questionIndex, totalQuestions, onSubmit, ad
           {JSON.stringify(question, null, 4)}
         </pre> */}
         {/* <p>{`alternative: ${selectedAlternative}`}</p> */}
-        {isQuestionSubmitted && isCorrect && <p>That's right!</p>}
-        {isQuestionSubmitted && !isCorrect && <p>Oh oh, that's wrong</p>}
+        {isQuestionSubmitted && isCorrect && <p className="outcomeMessage">That's right!</p>}
+        {isQuestionSubmitted && !isCorrect && <p className="outcomeMessage">Oh oh, that's wrong</p>}
         <Button type="submit" disabled={!hasAlternativeSelected}>Confirm</Button>
         </AlternativesForm>
       </Widget.Content>
     </Widget>
   );
 }
+
+QuestionWidget.ImageContainer = styled.div`
+  width: 100%;
+  height: 250px;
+  position: relative;
+`
+
 
 const screenStates = {
   LOADING: 'LOADING',
@@ -143,7 +174,7 @@ const screenStates = {
 };
 
 export default function QuizPage() {
-  console.log('Perguntas registradas:', db.questions)
+  // console.log('Perguntas registradas:', db.questions)
   const [screenState, setScreenState] = React.useState(screenStates.LOADING);
   const totalQuestions = db.questions.length;
   const [currentQuestion, setCurrentQuestion] = React.useState(0);
@@ -186,7 +217,6 @@ export default function QuizPage() {
         <title>Sweden Quiz @Imersao Next - Alura</title>
       </Head>
       <QuizContainer>
-        <QuizLogo />
         
         
         {screenState === screenStates.LOADING && <LoadingWidget />}

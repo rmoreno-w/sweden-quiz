@@ -12,6 +12,7 @@ import GitHubCorner from '../src/components/GitHubCorner';
 import Input from '../src/components/Input';
 import Button from '../src/components/Button';
 import Link from '../src/components/Link';
+import QuizContainer from '../src/components/QuizContainer';
 
 import { motion } from 'framer-motion';
 
@@ -22,17 +23,6 @@ import { motion } from 'framer-motion';
 //   background-position: center;
 // `;
 
-const QuizContainer = styled.div`
-  width: 100%;  
-  max-width: 350px;
-  padding-top: 45px;
-  margin: auto 10%;
-  @media screen and (max-width:500px) {
-    margin: auto;
-    padding: 15px;
-  }
-`;
-
 export default function Home() {
   const router = useRouter();
   const [name, setName] = React.useState('');
@@ -42,60 +32,75 @@ export default function Home() {
       <Head>
         <title>Sweden Quiz @Imersao Next - Alura</title>
       </Head>
-      <QuizContainer as={motion.section}
-          transition={{
-            duration: 0.9,
-            delay: 0.20
-          }}
-          variants={{
-          show: {opacity: 1, y: '0'},
-          hidden: {opacity: 0, y: '100%'}, 
-          }}
-          initial="hidden"
-          animate="show">
-        <QuizLogo />
+      <QuizContainer
+        as={motion.section}
+        transition={{
+          duration: 0.9,
+          delay: 0.2,
+        }}
+        variants={{
+          show: { opacity: 1, y: '0' },
+          hidden: { opacity: 0, y: '100%' },
+        }}
+        initial="hidden"
+        animate="show"
+      >
+        
         <Widget>
           <Widget.Header>
-            <h1>{ db.title }</h1>
+            <h1>{db.title}</h1>
+            <QuizLogo />
           </Widget.Header>
 
           <Widget.Content>
             {/* <p>{ db.description }</p> */}
-            <form onSubmit={(infoDoEvento) => {
-              infoDoEvento.preventDefault(); // Necessario p/ evitar padrao do browser de recarregar a pagina
-              router.push(`quiz?name=${name}`);
+            <form
+              onSubmit={(infoDoEvento) => {
+                infoDoEvento.preventDefault(); // Necessario p/ evitar padrao do browser de recarregar a pagina
+                router.push(`quiz?name=${name}`);
 
-              console.log('Submissao react');
-            }}
+                // console.log('Submissao react');
+              }}
             >
-
               <Input
                 name="nomeDoUsuario"
                 placeholder="Enter your name"
-                onChange={ (infosDaMudanca) => {
-                  console.log('Mudou o input para', infosDaMudanca.target.value);
+                onChange={(infosDaMudanca) => {
+                  console.log('Mudou o input'); //para', infosDaMudanca.target.value);
                   setName(infosDaMudanca.target.value);
                 }}
                 value={name}
               />
 
-              <Button type="submit" disabled={!name.length}>Play!</Button>
+              <Button type="submit" disabled={!name.length}>
+                Play!
+              </Button>
             </form>
           </Widget.Content>
         </Widget>
 
         <Widget>
           <Widget.Content>
-            <h1>Other Alura student's Quizs</h1>
-            
+            <h1>Other Alura student's Quizzes</h1>
+
             <ul>
               {db.external.map((linkExterno) => {
                 // console.log('linkk:', linkExterno);
-                const [projectName, userName] = linkExterno.replace(/\//g, '').replace('https:','').replace('.vercel.app','').split('.');
-                return (<li key={`listkey__${linkExterno}`}><Widget.Topic as={Link} href={`/quiz/${projectName}___${userName}`}>{`GitHub User: ${userName} - Project: ${projectName}`}</Widget.Topic></li>)
+                const [projectName, userName] = linkExterno
+                  .replace(/\//g, '')
+                  .replace('https:', '')
+                  .replace('.vercel.app', '')
+                  .split('.');
+                return (
+                  <li key={`listkey__${linkExterno}`}>
+                    <Widget.Topic
+                      as={Link}
+                      href={`/quiz/${projectName}___${userName}`}
+                    >{`GitHub User: ${userName} - Project: ${projectName}`}</Widget.Topic>
+                  </li>
+                );
               })}
             </ul>
-            
           </Widget.Content>
         </Widget>
 

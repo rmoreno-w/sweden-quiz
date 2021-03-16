@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 const Widget = styled.div`
-  margin-top: 24px;
-  margin-bottom: 24px;
+
   border: 1px solid ${({ theme }) => theme.colors.primary};
   background-color: ${({ theme }) =>
     // console.log('Posso mostrar os temas aqui'); COMENTADO=> Quando ataulizava component, era mostrada
@@ -13,8 +12,8 @@ const Widget = styled.div`
 
   h1, h2, h3 {
     font-size: 16px;
-    font-weight: 700;
-    line-height: 1;
+    font-weight: 500;
+    line-height: 1.4;
     margin-bottom: 0;
   }
 
@@ -23,13 +22,18 @@ const Widget = styled.div`
     font-weight: 400;
     line-height: 1;
   }
+
+  .outcomeMessage{
+    margin:0;
+  }
 `;
 
 Widget.Header = styled.div`
+  position: relative;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 18px 32px;
+  padding: 18px 18px;
   background-color: ${({ theme }) => theme.colors.primary};
 
   * { 
@@ -54,11 +58,13 @@ Widget.Content = styled.div`
   }
 
   li {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
   }
 
   p {
+    /* margin-top: 0; */
     margin-bottom: 10px;
+    line-height: 1.5;
   }
 `;
 
@@ -72,12 +78,16 @@ Widget.Topic = styled.a`
   margin-bottom: 8px;
   cursor: pointer;
   border-radius: ${({ theme }) => theme.borderRadius};
-  transition: .3s;
+  transition: all .3s;
   display: block;
   
+
   &:hover,
   &:focus {
-    opacity: .5;
+    transform: scale(1.07);
+    transform-origin: center;
+    background-color: ${({ theme }) => `${theme.colors.hover}`};
+    opacity: .75;
   }
 `;
 
