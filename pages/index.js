@@ -81,7 +81,7 @@ export default function Home() {
 
         <Widget>
           <Widget.Content>
-            <h1>Other Alura student's Quizzes</h1>
+            <h1>Other Alura students' Quizzes</h1>
 
             <ul>
               {db.external.map((linkExterno) => {
